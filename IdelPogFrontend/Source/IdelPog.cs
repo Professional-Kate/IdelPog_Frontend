@@ -2,14 +2,14 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
-namespace IdelPogFrontend
+namespace IdelPogFrontend.Source
 {
-    public class Game1 : Game
+    public class IdelPog : Game
     {
         private GraphicsDeviceManager _graphics { get; set; }
         private SpriteBatch _spriteBatch { get; set; }
 
-        public Game1()
+        public IdelPog()
         {
             _graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
@@ -32,8 +32,10 @@ namespace IdelPogFrontend
 
         protected override void Update(GameTime gameTime)
         {
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
+            if (Keyboard.GetState().IsKeyDown(Keys.Escape))
+            {
                 Exit();
+            }
 
             // TODO: Add your update logic here
 

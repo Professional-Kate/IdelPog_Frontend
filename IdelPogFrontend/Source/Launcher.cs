@@ -1,11 +1,11 @@
-﻿namespace IdelPogFrontend
+﻿namespace IdelPogFrontend.Source
 {
     public abstract class Launcher
     {
         public static void Main()
         {
-            Game1 game = new();
-            game.Run();
+            IdelPog idelPog = new();
+            idelPog.Run();
         }
     }
 }
