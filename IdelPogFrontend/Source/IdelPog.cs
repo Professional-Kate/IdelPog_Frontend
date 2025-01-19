@@ -8,6 +8,8 @@ namespace IdelPogFrontend.Source
     {
         private GraphicsDeviceManager _graphics { get; set; }
         private SpriteBatch _spriteBatch { get; set; }
+        
+        private Texture2D _background { get; set; }
 
         public IdelPog()
         {
@@ -18,8 +20,6 @@ namespace IdelPogFrontend.Source
 
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
-
             base.Initialize();
         }
 
@@ -27,7 +27,7 @@ namespace IdelPogFrontend.Source
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            // TODO: use this.Content to load your game content here
+            _background = Content.Load<Texture2D>("Images/background");
         }
 
         protected override void Update(GameTime gameTime)
@@ -37,8 +37,6 @@ namespace IdelPogFrontend.Source
                 Exit();
             }
 
-            // TODO: Add your update logic here
-
             base.Update(gameTime);
         }
 
@@ -46,7 +44,9 @@ namespace IdelPogFrontend.Source
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            // TODO: Add your drawing code here
+            _spriteBatch.Begin();
+            _spriteBatch.Draw(_background, new Vector2(0, 0), Color.White);
+            _spriteBatch.End();
 
             base.Draw(gameTime);
         }
